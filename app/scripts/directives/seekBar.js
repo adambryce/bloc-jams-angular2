@@ -52,13 +52,13 @@
         };
 
         scope.trackThumb = function() {
-          $document.bind('mousemove.thumb', function(event) {
-            var percent = calculatePercent(seekBar, event);
+            $document.bind('mousemove.thumb', function(event) {
             scope.$apply(function() {
+            var percent = calculatePercent(seekBar, event);
               scope.value = percent * scope.max;
               notifyOnChange(scope.value);
             });
-          });
+        });
 
           $document.bind('mouseup.thumb', function() {
             $document.unbind('mousemove.thumb');
