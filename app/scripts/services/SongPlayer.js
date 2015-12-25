@@ -1,4 +1,4 @@
- (function() {
+(function() {
     function SongPlayer($rootScope, Fixtures) {
         var SongPlayer = {};
 
@@ -35,7 +35,7 @@
                     SongPlayer.currentTime = currentBuzzObject.getTime();
                 });
             });
-
+            
             SongPlayer.currentSong = song;
         };
 
@@ -85,7 +85,7 @@
         * @type {Number}
         */
         SongPlayer.volume = 80;
-
+        
         /**
         * @function play
         * @desc Play current or new song
@@ -163,6 +163,7 @@
                 currentBuzzObject.setTime(time);
             }
         };
+        
         /**
         * @function setVolume
         * @desc Set volume for songs
@@ -174,11 +175,11 @@
             }
             SongPlayer.volume = volume;
         };
-
+        
         return SongPlayer;
-    };
+    }
 
     angular
         .module('blocJams')
         .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
-})();
+ })();
